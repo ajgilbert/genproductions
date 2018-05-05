@@ -517,7 +517,7 @@ make_gridpack () {
           echo "preparing reweighting step"
           mkdir -p madevent/Events/pilotrun
           cp $WORKDIR/unweighted_events.lhe.gz madevent/Events/pilotrun
-          echo "f2py_compiler=" `which gfortran` >> ./madevent/Cards/me5_configuration.txt
+          echo "f2py_compiler=" `which f2py` >> ./madevent/Cards/me5_configuration.txt
           #need to set library path or f2py won't find libraries
           export LIBRARY_PATH=$LD_LIBRARY_PATH
           cd madevent
