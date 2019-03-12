@@ -109,6 +109,8 @@ if [ ! -e $LHEWORKDIR/header_for_madspin.txt ]; then
     scalevars="--mur=1,2,0.5 --muf=1,2,0.5 --together=muf,mur --dyn=-1"
 
     echo "systematics $runlabel --remove_wgts=all --start_id=1001 --pdf=$pdfsets $scalevars" | ./bin/aMCatNLO
+    # Do not remove existing weights if running model reweighting
+    # echo "systematics $runlabel --start_id=1001 --pdf=$pdfsets $scalevars" | ./bin/aMCatNLO
 	cp ./Events/${runlabel}/events.lhe.gz $LHEWORKDIR/${runname}_final.lhe.gz
 
 #else handle external tarball

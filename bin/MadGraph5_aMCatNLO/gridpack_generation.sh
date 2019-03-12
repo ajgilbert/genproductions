@@ -163,9 +163,9 @@ make_gridpack () {
     	  long_wait=300
     	  short_wait=120
           else
-    	  n_retries=3
-    	  long_wait=60
-    	  short_wait=30
+    	  n_retries=10
+    	  long_wait=600
+    	  short_wait=300
           fi
           echo "set cluster_status_update $long_wait $short_wait" >> mgconfigscript
           echo "set cluster_nb_retry $n_retries" >> mgconfigscript
@@ -194,6 +194,7 @@ make_gridpack () {
           if [[ $model = *[!\ ]* ]]; then
             echo "Loading extra model $model"
             wget --no-check-certificate https://cms-project-generators.web.cern.ch/cms-project-generators/$model	
+            # cp /afs/cern.ch/user/a/agilbert/public/$model ./
             cd models
             if [[ $model == *".zip"* ]]; then
               unzip ../$model

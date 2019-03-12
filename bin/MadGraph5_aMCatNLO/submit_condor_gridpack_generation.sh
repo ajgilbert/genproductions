@@ -25,12 +25,13 @@ fi
 # tomorrow     = 1 day
 # testmatch    = 3 days
 # nextweek     = 1 week
-CONDOR_JOB_FLAVOUR="nextweek"
+export CONDOR_JOB_FLAVOUR="testmatch"
+export CONDOR_QUERY_SLEEP_PER_RETRY=180
 
 if [[ "${HOSTNAME}" =~ "lxplus" ]] && [[ ! $(pwd) =~ "/afs/" ]]; then
     echo "You are submitting from lxplus and the local directory is not on AFS."
     echo "Automatically switch to condor spool mode."
-    workqueue="condor_spool"
+    # workqueue="condor_spool"
 fi
 
 if [[ "${workqueue}" = "condor_spool" ]] && [[ $(pwd) =~ "/afs/" ]]; then
