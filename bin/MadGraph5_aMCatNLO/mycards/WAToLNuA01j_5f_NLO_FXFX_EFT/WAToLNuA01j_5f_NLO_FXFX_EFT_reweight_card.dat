@@ -1,0 +1,67 @@
+#******************************************************************
+#                       Reweight Module                           *
+#******************************************************************
+change mode LO
+change helicity False
+change rwgt_dir rwgt
+launch --rwgt_name=100000
+   set Dim6 1 0.0
+   set Dim6 4 0
+
+launch --rwgt_name=100001
+   set Dim6 1 1.5
+   set Dim6 4 0
+
+launch --rwgt_name=100002
+   set Dim6 1 3.0
+   set Dim6 4 0
+
+launch --rwgt_name=100003
+   set Dim6 1 6.0
+   set Dim6 4 0
+
+launch --rwgt_name=100004
+   set Dim6 1 10.0
+   set Dim6 4 0
+
+launch --rwgt_name=100005
+   set Dim6 1 -1.5
+   set Dim6 4 0
+
+launch --rwgt_name=100006
+   set Dim6 1 -3.0
+   set Dim6 4 0
+
+launch --rwgt_name=100007
+   set Dim6 1 -6.0
+   set Dim6 4 0
+
+launch --rwgt_name=100008
+   set Dim6 1 -10.0
+   set Dim6 4 0
+
+launch --rwgt_name=100009
+   set Dim6 1 -15.0
+   set Dim6 4 0
+
+#* Use the set command to specify the new set of parameter 
+#* Or specify a path to a valid param_card/banner
+#* Example of valid command:
+#*     set aewm1 137
+#*     ~/param_card.dat
+#*
+#* Note: 
+#*   1) the value of alphas will be used from the event
+#*      so the value of the param_card is not taken into account.
+#*   2) It is dangerous to change a mass of any particle. 
+
+
+#* If you want to compute the weight for more than one hyppothesis
+#* you need first to uncomment the following line:
+# launch
+# and then use the set command to specify your parameter.
+# All modification will start from the ORIGINAL card not from the 
+# last define one.
+#* You can have as many weight as you want.
+
+
